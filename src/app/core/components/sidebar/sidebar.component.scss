@@ -1,0 +1,52 @@
+@import './../../../../assets/scss/parameters';
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 70px;
+    padding-top: 20px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    width: 300px;
+
+    a {
+        height: 60px;
+        line-height: 60px;
+        display: block;
+        padding: 0 32px;
+        font-weight: 500;
+        color: $navigation-icon-color;
+        cursor: pointer;
+        margin-bottom: 10px;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $navigation-icon-color-hover;
+            transition: width $hover-transition-icons;
+        }
+
+        &:hover {
+            color: $navigation-icon-color-hover;
+
+            &::after {
+                width: 100%;
+            }
+        }
+
+        i {
+            float: left;
+            width: 20px;
+            height: 60px;
+            line-height: 60px;
+            margin-right: 10px;
+        }
+
+        // &:hover {
+        //     background-color: rgba(0, 0, 0, 0.05);
+        // }
+    }
+}
