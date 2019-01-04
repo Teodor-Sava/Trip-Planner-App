@@ -1,12 +1,20 @@
+@import './../../../../assets/scss/parameters';
+
 .navbar {
     display: flex;
-    height: 60px;
+    height: 70px;
     margin-bottom: 40px;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    border-bottom: 1px solid $navigation-icon-color;
 
     .navbar__logo {
-        float: left;
-        color: #3fcf8e;
-        align-self: center;
+        display: flex;
+        width: 120px;
+        color: $navigation-icon-color;
         font-weight: 700;
         text-transform: uppercase;
         padding: 0 20px;
@@ -17,7 +25,61 @@
         &:hover {
             font-size: 26px;
             transform: rotate(-10deg);
-            color: darken(#3fcf8e, 10%);
+            color: $navigation-icon-color-hover;
         }
+    }
+
+    .navbar__search {}
+
+    .navbar__user-info {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+
+        a {
+            cursor: pointer;
+            padding: 0 10px;
+            line-height: 24px;
+            height: 24px;
+            color: $navigation-icon-color;
+            transition: all $hover-transition-icons;
+
+            &:not(:last-child) {
+                margin-right: 8px;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                width: 0;
+                height: 2px;
+                background: $navigation-icon-color-hover;
+                transition: width $hover-transition-icons;
+            }
+
+            &:hover:not(:last-child) {
+                color: $navigation-icon-color-hover;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &.user-logo {
+                background-color: $navigation-icon-color;
+                color: $success-green;
+                border-radius: 50%;
+                width: 33px;
+                height: 33px;
+                line-height: 33px;
+                text-align: center;
+                vertical-align: middle;
+                font-weight: 300;
+                font-size: 20px;
+                margin-left: 10px;
+            }
+        }
+
+
     }
 }
