@@ -1,0 +1,52 @@
+@import '../../../../assets/scss/parameters';
+
+.notification {
+    visibility: hidden;
+    opacity: 0;
+    min-width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: 0 6px 6px -4px #777;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    display: flex;
+    z-index: 999;
+
+    transition: all 1s;
+
+    p {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 18px;
+        align-self: center;
+        font-weight: 700;
+    }
+
+    &.active-notification {
+        visibility: visible;
+        opacity: 1;
+        left: 20px;
+    }
+
+    &.notification-success {
+        background-color: $success-green;
+        color: white;
+
+
+    }
+
+    &.notification-danger {
+        background-color: #DA3A2D;
+        color: white;
+    }
+
+    i {
+        position: absolute;
+        color: white;
+        left: 12px;
+        top: 13.5px;
+    }
+
+
+}
