@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container login">
     <div class="row justify-content-center">
         <div class="col-sm-10">
             <div class="card">
@@ -6,35 +6,48 @@
                     <h1>Register</h1>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="row">
-                                <div class="col-4">
-                                    <label>Email</label>
-                                </div>
-                                <div class="col-8">
-                                    <input type="text" class="form-input">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="row">
-                                <div class="col-4">
-                                    <label>Email</label>
-                                </div>
-                                <div class="col-8">
-                                    <input type="text" class="form-input">
-                                </div>
-                            </div>
+                    <div class="row mb-5 mt-5">
+                        <div class="col-12 mb-2">
+                            <h3 class="text-align-center">
+                                Please register an account in order to continue to the main page
+                            </h3>
                         </div>
                         <div class="col-12">
-                            <button>Register</button>
+                            <p></p>
                         </div>
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <div class="col-12 mb-1">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" formControlName="email" class="form-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-2">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label>Password</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="password" formControlName="password" class="form-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="offset-4 col-4 submit-wrapper">
+                                <button class="button btn-success" type="submit">Register</button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer mb-1">
+                    <p>Or you can login with one of the following</p>
+                    <a href="https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.me&response_type=code&client_id=463231458499-gc7mgk9hob7libonaomsvq4q9dqltf7n.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A3000"
+                        class="icon">Google</a>
                     <a href="#" class="icon">Facebook</a>
-                    <a href="#" class="icon">Google</a>
                 </div>
             </div>
         </div>

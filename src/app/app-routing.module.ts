@@ -7,6 +7,10 @@ const appRoutes: Routes = [
         path: "auth",
         loadChildren:
             "./authentication/authentication.module#AuthenticationModule"
+    },
+    {
+        path: "",
+        loadChildren: "./dashboard/dashboard.module#DashboardModule"
     }
 ];
 

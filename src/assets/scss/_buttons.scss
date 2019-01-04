@@ -1,0 +1,15 @@
+.button {
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 6px 20px;
+    font-weight: 600;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.btn-success {
+        background-color: $success-green;
+        color: white;
+    }
+}

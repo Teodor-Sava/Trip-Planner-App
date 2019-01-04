@@ -1,12 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Muli:300,700|Yeseva+One');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,700');
+@import "~material-design-icons/iconfont/material-icons.css";
 @import './assets/scss/reboot';
 @import './assets/scss/grid';
 @import './assets/scss/parameters';
 @import './assets/scss/typography';
 
-@import './assets/scss/header';
 @import './assets/scss/card';
 @import './assets/scss/buttons';
 @import './assets/scss/inputs';
