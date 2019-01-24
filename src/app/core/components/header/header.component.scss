@@ -11,75 +11,170 @@
     flex-wrap: nowrap;
     border-bottom: 1px solid $navigation-icon-color;
 
-    .navbar__logo {
+    .menu {
+        margin-left: 10px;
         display: flex;
-        width: 120px;
-        color: $navigation-icon-color;
-        font-weight: 700;
-        text-transform: uppercase;
-        padding: 0 20px;
-        font-size: 24px;
-        text-decoration: none;
-        transition: font-size 2s, transform .8s ease-in-out;
+        align-items: center;
 
-        &:hover {
-            font-size: 26px;
-            transform: rotate(-10deg);
-            color: $navigation-icon-color-hover;
+        .menu-hamburger {
+            color: $navigation-icon-color;
+            float: left;
+            cursor: pointer;
+            margin-left: 10px;
+
+            i {
+                height: 70px;
+                line-height: 70px;
+            }
+        }
+
+        .navbar__logo {
+            display: flex;
+            width: 120px;
+            color: $navigation-icon-color;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0 20px;
+            font-size: 24px;
+            text-decoration: none;
+            transition: font-size 2s, transform .8s ease-in-out;
+
+            &:hover {
+                font-size: 26px;
+                transform: rotate(-10deg);
+                color: $navigation-icon-color-hover;
+            }
         }
     }
+
+
 
     .navbar__search {}
 
     .navbar__user-info {
-        display: flex;
-        align-items: center;
         padding-right: 20px;
+        display: flex;
 
-        a {
-            cursor: pointer;
-            padding: 0 10px;
-            line-height: 24px;
-            height: 24px;
-            color: $navigation-icon-color;
-            transition: all $hover-transition-icons;
+        .navbar__user-info-element {
+            position: relative;
+            display: flex;
+            align-items: center;
 
-            &:not(:last-child) {
+            .navbar__user-info-icon {
+                cursor: pointer;
+                padding: 0 10px;
+                line-height: 24px;
+                height: 24px;
+                color: $navigation-icon-color;
+                transition: all $hover-transition-icons;
                 margin-right: 8px;
-            }
-
-            &::after {
-                content: "";
-                display: block;
-                width: 0;
-                height: 2px;
-                background: $navigation-icon-color-hover;
-                transition: width $hover-transition-icons;
-            }
-
-            &:hover:not(:last-child) {
-                color: $navigation-icon-color-hover;
 
                 &::after {
+                    content: "";
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    background: $navigation-icon-color-hover;
+                    transition: width $hover-transition-icons;
+                }
+
+                &:hover {
+                    color: $navigation-icon-color-hover;
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
+
+                &.user-logo {
+                    background-color: $navigation-icon-color;
+                    color: $success-green;
+                    border-radius: 50%;
+                    width: 33px;
+                    height: 33px;
+                    line-height: 33px;
+                    text-align: center;
+                    vertical-align: middle;
+                    font-weight: 300;
+                    font-size: 20px;
+                    margin-left: 10px;
+                    position: relative;
+
+                    &:hover::after {
+                        width: 0;
+                    }
+                }
+
+            }
+
+            .user-logo__dropdown {
+                position: absolute;
+                width: 275px;
+                top: 33px;
+                right: 10px;
+                background-color: #ffffff;
+                margin-top: 10px;
+                border-radius: 2px;
+                display: flex;
+                flex-direction: column;
+
+                .user-logo__dropdown-header {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 20px;
+                    background-color: $navigation-icon-color-hover;
+                    margin-bottom: 5px;
+
+                    .user-logo__dropdown-header_image {
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 20px;
+                        background-image: linear-gradient(45deg, rgba(63, 207, 142, 1) 0%, rgba(0, 128, 128, 1) 100%);
+                        color: $navigation-icon-color;
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: center;
+                        vertical-align: middle;
+                        font-weight: 300;
+                        font-size: 20px;
+                        position: relative;
+                    }
+
+                    .user-logo__dropdown-header_credentials {
+                        display: flex;
+                        flex-direction: column;
+
+                        .user-logo__dropdown-header_credentials-email {
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                .user-logo__dropdown-element {
+                    cursor: pointer;
                     width: 100%;
+                    color: black;
+                    font-weight: 400;
+                    height: 44px;
+                    line-height: 44px;
+                    align-self: stretch;
+                    padding: 0 25px;
+
+                    i {
+                        height: 44px;
+                        line-height: 44px;
+                        float: left;
+                        margin-right: 10px;
+                    }
+
+                    &:hover {
+                        background-color: $navigation-icon-color-hover;
+                        color: lighten(black, 10%);
+                    }
                 }
             }
-
-            &.user-logo {
-                background-color: $navigation-icon-color;
-                color: $success-green;
-                border-radius: 50%;
-                width: 33px;
-                height: 33px;
-                line-height: 33px;
-                text-align: center;
-                vertical-align: middle;
-                font-weight: 300;
-                font-size: 20px;
-                margin-left: 10px;
-            }
         }
-
-
     }
 }
