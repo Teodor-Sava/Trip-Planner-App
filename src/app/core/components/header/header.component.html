@@ -1,15 +1,39 @@
 <div class="container-fluid navbar">
-    <div>
-        <a></a>
+    <div class="menu">
+        <a class="menu-hamburger" [@rotatedIcon]="menuIconState" appAnimateMenuHamburger (click)="onToggleSidebar()"><i
+                class="material-icons">
+                close
+            </i></a>
         <a href="" class="navbar__logo">Logo</a>
     </div>
     <div class="navbar__user-info">
-        <a><i class="material-icons">
-                chat
-            </i></a>
-        <a><i class="material-icons">
-                notifications_active
-            </i></a>
-        <a class="user-logo">U</a>
+        <div class="navbar__user-info-element">
+            <a class="navbar__user-info-icon"><i class="material-icons">
+                    chat
+                </i></a>
+        </div>
+        <div class="navbar__user-info-element">
+            <a class="navbar__user-info-icon"><i class="material-icons">
+                    notifications_active
+                </i></a>
+        </div>
+
+        <div class="navbar__user-info-element">
+            <a class="navbar__user-info-icon user-logo">T</a>
+            <div class="user-logo__dropdown">
+                <a class="user-logo__dropdown-header">
+                    <span class="user-logo__dropdown-header_image">T</span>
+                    <div class="user-logo__dropdown-header_credentials">
+                        <a>Teodor Sava</a>
+                        <a class="user-logo__dropdown-header_credentials-email">savateodorbv@gmail.com</a>
+                    </div>
+                </a>
+                <a class="user-logo__dropdown-element"><i class="material-icons">
+                        settings
+                    </i>Settings</a>
+                <a class="user-logo__dropdown-element">Logout</a>
+            </div>
+        </div>
+
     </div>
 </div>
