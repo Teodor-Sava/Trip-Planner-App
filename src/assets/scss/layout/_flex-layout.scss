@@ -1,0 +1,11 @@
+.flex {
+    display: flex;
+}
+
+$flex-class: "flex-";
+
+@for $i from 1 through 100 {
+  .#{$flex-class}#i {
+    flex-basis: '#{i}%';
+  }
+}

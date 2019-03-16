@@ -1,19 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,500,700');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300,500,700");
 @import "~material-design-icons/iconfont/material-icons.css";
-@import './assets/scss/reboot';
-@import './assets/scss/grid';
-@import './assets/scss/parameters';
-@import './assets/scss/typography';
+@import "./assets/scss/reboot";
+@import "./assets/scss/layout/flex-layout";
+@import "./assets/scss/grid";
+@import "./assets/scss/parameters";
+@import "./assets/scss/typography";
 
-@import './assets/scss/card';
-@import './assets/scss/buttons';
-@import './assets/scss/inputs';
+@import "./assets/scss/card";
+@import "./assets/scss/buttons";
+@import "./assets/scss/inputs";
+@import "./assets/scss/dropdowns";
 
+html,
 body {
-    // background: rgb(2, 0, 36);
-    height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(45deg, rgba(63, 207, 142, 1) 0%, rgba(0, 128, 128, 1) 100%);
-    background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
+

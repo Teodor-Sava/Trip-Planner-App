@@ -1,0 +1,53 @@
+@import "../../../../assets/scss/parameters";
+
+.search-container {
+  display: flex;
+  align-self: stretch;
+  position: relative;
+
+  .search-input {
+    min-width: 350px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px 10px 45px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $ligh-grey-color;
+      font-weight: 400;
+    }
+    &.with-search-results{
+        border-radius: 20px 20px 0 0;
+    }
+  }
+  .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    color: $ligh-grey-color;
+  }
+  
+  .search-dropdown {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 20px);
+    background: white;
+    display: flex;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    flex-direction: column;
+    z-index: 999;
+    border-radius: 0 0 2px 2px;
+    transition: all;ł
+    .search-dropdown-active {
+
+    }
+    .search-value {
+      padding: 6px;
+    }
+  }
+}

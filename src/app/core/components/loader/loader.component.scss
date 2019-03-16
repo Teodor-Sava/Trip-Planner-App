@@ -1,0 +1,113 @@
+@import "../../../../assets/scss/parameters";
+
+$el-size: 2.5vh;
+$animation-time: 2s;
+$animation-time-delay: -0.8s;
+
+$c_a: rgb(255, 132, 144) rgb(255, 115, 124) rgb(245, 247, 249); // top / bottom / BG
+$c2_a: rgb(255, 218, 178) rgb(255, 50, 155); // Fade-anim colors
+
+$ease-circ: cubic-bezier(0.42, 0, 0.58, 1);
+
+.loader-overlay {
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $ligh-grey-color;
+  z-index: $highest-z-index;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loader__container {
+    .loader__nucleobase {
+      position: relative;
+      display: inline-block;
+      &::before,
+      &::after {
+        content: "";
+        display: inline-block;
+        width: $el-size;
+        height: $el-size;
+        // max-width: 2em;
+        // max-height: 2em;
+        border-radius: 50%;
+        position: absolute;
+      }
+
+      &:not(:last-child) {
+        margin-right: $el-size * 1.62;
+      }
+      @for $i from 1 to 12 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * $animation-time-delay;
+
+          &::before {
+            animation: animateBefore $animation-time $ease-circ infinite;
+            animation-delay: $i * $animation-time-delay;
+            background-color: nth($c2_a, 2);
+          }
+
+          &::after {
+            animation: animateAfter $animation-time $ease-circ infinite;
+            animation-delay: $i * $animation-time-delay;
+            background-color: nth($c2_a, 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes animateBefore {
+  0% {
+    top: $el-size * -2;
+    z-index: $highest-z-index;
+  }
+
+  25% {
+    transform: scale(1.2);
+    z-index: $highest-z-index;
+  }
+
+  50% {
+    top: $el-size * 2;
+    z-index: $highest-z-index;
+  }
+
+  75% {
+    background-color: nth($c2_a, 1);
+    transform: scale(0.8);
+    z-index: -1;
+  }
+
+  100% {
+    top: $el-size * -2;
+    z-index: -1;
+  }
+}
+
+@keyframes animateAfter {
+  0% {
+    top: $el-size * 2;
+    z-index: $highest-z-index -1;
+  }
+  25% {
+    transform: scale(0.8);
+  }
+  50% {
+    top: $el-size * -2;
+    z-index: $highest-z-index -1;
+  }
+  75% {
+    background-color: nth($c2_a, 2);
+    transform: scale(1.2);
+    z-index: $highest-z-index;
+  }
+  100% {
+    top: $el-size * 2;
+    z-index: $highest-z-index;
+  }
+}
